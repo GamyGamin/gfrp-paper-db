@@ -1,6 +1,21 @@
 const paperId = document.body.dataset.paperId;
 const paper = papers.find((item) => item.id === paperId);
 
+if (!paper) {
+  document.querySelector("main").innerHTML = `
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Missing Record</p>
+          <h2>Paper data could not be loaded</h2>
+        </div>
+      </div>
+      <p class="section-note">Return to the database and choose one of the available paper records.</p>
+    </section>
+  `;
+  throw new Error(`Paper record ${paperId} was not found.`);
+}
+
 document.getElementById("paper-title").textContent = `Paper ${paper.id}: ${paper.title}`;
 document.getElementById("paper-polymer").textContent = `${paper.polymerName} (${paper.relevance === "related" ? "related reference material" : "exact target material"})`;
 
@@ -132,6 +147,14 @@ function renderSnChart(svgId, data) {
     <line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${height - margin.bottom}" class="axis-line" />
     <polyline points="${points}" class="sn-line" />
     ${pointMarks}
+    <g aria-hidden="true">
+      <circle cx="${width - 252}" cy="34" r="5.5" class="point" />
+      <text x="${width - 238}" y="39" class="axis-label">Reported</text>
+      <circle cx="${width - 162}" cy="34" r="5.5" class="point inferred-point" />
+      <text x="${width - 148}" y="39" class="axis-label">Inferred</text>
+      <circle cx="${width - 74}" cy="34" r="5.5" class="point runout-point" />
+      <text x="${width - 60}" y="39" class="axis-label">Runout</text>
+    </g>
     <text x="${width / 2}" y="${height - 18}" text-anchor="middle" class="axis-title">Fatigue life, N (cycles, log scale)</text>
     <text x="24" y="${height / 2}" text-anchor="middle" transform="rotate(-90 24 ${height / 2})" class="axis-title">Maximum stress (MPa)</text>
   `;

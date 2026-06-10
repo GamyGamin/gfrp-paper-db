@@ -20,7 +20,7 @@ targetMaterials.forEach((item) => {
 
 papers.forEach((paper) => {
   const card = document.createElement("article");
-  card.className = "record-card";
+  card.className = `record-card is-${paper.relevance}`;
   card.innerHTML = `
     <div class="record-top">
       <div class="record-heading">
