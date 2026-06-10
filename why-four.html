@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why These Four Materials?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero compact-hero rationale-hero">
+      <p class="eyebrow">Selection Context</p>
+      <a class="back-link" href="index.html">Back to database</a>
+      <h1 id="why-title"></h1>
+      <p id="why-summary" class="hero-copy"></p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Primary Systems</p>
+            <h2>Interactive Material Selection Logic</h2>
+          </div>
+          <p class="section-note">
+            This page explains why each of the four main material systems was chosen, while the homepage remains focused on fatigue-paper extraction.
+          </p>
+        </div>
+        <div id="why-switcher" class="why-switcher"></div>
+        <div id="why-detail" class="why-detail"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Binder Logic</p>
+            <h2>Why Polyester Is In The Four, But Epoxy Still Appears</h2>
+          </div>
+        </div>
+        <div id="binder-grid" class="binder-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Process Notes</p>
+            <h2>How The Material Choice Was Framed</h2>
+          </div>
+        </div>
+        <ul id="process-notes" class="detail-list findings-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="why-four.js"></script>
+</body>
+</html>

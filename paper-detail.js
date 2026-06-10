@@ -76,10 +76,10 @@ if (paper.fatigueData && paper.fatigueData.length > 0) {
     "fatigue-table",
     ["Stress level (% of UTS)", "Stress (MPa)", "Fatigue life", "Note"],
     paper.fatigueData.map((item) => [
-      `${item.stressLevel}%`,
+      item.stressLevel === null || item.stressLevel === undefined ? "Not stated" : `${item.stressLevel}%`,
       `${item.stressMpa} MPa`,
       item.fatigueLifeLabel,
-      item.runout ? "Runout" : item.inferred ? "Inferred from published fit" : "Reported"
+      item.note ? item.note : item.runout ? "Runout" : item.inferred ? "Inferred from published fit" : "Reported"
     ])
   );
 }
@@ -136,7 +136,7 @@ function renderSnChart(svgId, data) {
 
   const pointMarks = data.map((item) => `
     <circle cx="${x(item.fatigueLife)}" cy="${y(item.stressMpa)}" r="5.5" class="${item.runout ? "point runout-point" : item.inferred ? "point inferred-point" : "point"}" />
-    <text x="${x(item.fatigueLife) + 10}" y="${y(item.stressMpa) - 10}" class="point-label">${item.stressLevel}%</text>
+    <text x="${x(item.fatigueLife) + 10}" y="${y(item.stressMpa) - 10}" class="point-label">${item.stressLevel === null || item.stressLevel === undefined ? `${item.stressMpa} MPa` : `${item.stressLevel}%`}</text>
   `).join("");
 
   svg.innerHTML = `
