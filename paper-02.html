@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper 02 - Fatigue and Tensile Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-paper-id="02">
+  <div class="page-shell">
+    <header class="hero compact-hero">
+      <p class="eyebrow">Paper Detail</p>
+      <a class="back-link" href="index.html">Back to database</a>
+      <h1 id="paper-title"></h1>
+      <p id="paper-polymer" class="hero-copy"></p>
+      <div class="hero-meta" id="paper-links"></div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Material Overview</p>
+            <h2>Dedicated Material Data</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="material-table"></table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Tensile Data</p>
+            <h2>Numerical Tensile Properties</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="tensile-table"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="experimental-section" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Additional Data</p>
+            <h2 id="experimental-title">Additional Data</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="experimental-table"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="fatigue-section" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Fatigue Data</p>
+            <h2>S-N Dataset Used For Plotting</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="fatigue-table"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="graph-section" hidden>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Graph</p>
+            <h2>S-N Curve</h2>
+          </div>
+          <p class="section-note">
+            X-axis is fatigue life in cycles on a log scale. Y-axis is maximum applied stress in MPa.
+          </p>
+        </div>
+        <div class="chart-card">
+          <svg id="sn-chart" viewBox="0 0 860 460" role="img" aria-label="S-N curve chart"></svg>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Test Setup</p>
+            <h2>Fatigue Test Conditions</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="setup-table"></table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Interpretation</p>
+            <h2>Key Findings</h2>
+          </div>
+        </div>
+        <ul class="detail-list findings-list" id="findings-list"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="paper-detail.js"></script>
+</body>
+</html>

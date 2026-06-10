@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polymer Fatigue Materials Database</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Static Research Demo</p>
+      <h1>Glass Fiber Reinforced Polymer Fatigue Database</h1>
+      <p class="hero-copy">
+        A curated, manual website for storing fatigue and tensile information from research papers.
+        Exact target materials and related reference systems are kept separate so the database stays useful
+        without mixing direct evidence with approximate matches.
+      </p>
+      <div class="hero-meta">
+        <div>
+          <span class="meta-label">Current source papers</span>
+          <strong id="paper-count">0</strong>
+        </div>
+        <div>
+          <span class="meta-label">Target materials</span>
+          <strong>4</strong>
+        </div>
+        <div>
+          <span class="meta-label">Mode</span>
+          <strong>Manual curation</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Target Scope</p>
+            <h2>Primary Material Systems</h2>
+          </div>
+          <p class="section-note">
+            These are the exact systems you want to study first. Papers that do not match exactly can still be stored below as related evidence.
+          </p>
+        </div>
+        <div id="target-grid" class="target-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Paper Database</p>
+            <h2>Curated Research Records</h2>
+          </div>
+          <p class="section-note">
+            Click the paper number, polymer name, or paper title to open a separate page with numerical tables and the S-N graph.
+          </p>
+        </div>
+        <div id="record-list" class="record-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
